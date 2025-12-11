@@ -24,3 +24,21 @@ class Detector:
         for (x, y, w, h) in cars:
             cv2.rectangle(frame, (x, y), (x + w, y + h), (0, 0, 255), 2)
         return len(cars)
+
+            ###############################################################################
+            #                              CLASE DETECTOR                                 #
+            #-----------------------------------------------------------------------------#
+            # FUNCIÓN: Implementa detección básica de objetos (personas y vehículos)      #
+            #          utilizando clasificadores Haar Cascade de OpenCV.                  #
+            #                                                                             #
+            # ELEMENTOS CLAVE:                                                            #
+            #   1. __init__: Carga los modelos pre-entrenados (XML) para su uso.          #
+            #   2. detect_people: Detecta cuerpos completos, dibuja rectángulos AZULES    #
+            #      y devuelve el conteo.                                                  #
+            #   3. detect_cars: Detecta vehículos, dibuja rectángulos ROJOS y devuelve    #
+            #      el conteo.                                                             #
+            #                                                                             #
+            # FLUJO SIMPLIFICADO: FRAME -> (Convertir a escala de grises) ->              #
+            #                     (Aplicar Cascade.detectMultiScale) ->                   #
+            #                     (Dibujar + Contar) -> Devolver Conteo                   #
+            ###############################################################################
