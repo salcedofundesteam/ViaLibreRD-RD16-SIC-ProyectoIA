@@ -59,3 +59,30 @@ def generate_plots():
 
 if __name__ == "__main__":
     generate_plots()
+
+
+
+            ##############################################################################
+            #                          FUNCIÓN generate_plots                            #
+            #----------------------------------------------------------------------------#
+            # FUNCIÓN: Crea un gráfico básico de líneas a partir de datos de tráfico     #
+            #          guardados en un archivo CSV.                                      #
+            #                                                                            #
+            # OPERACIONES ELEMENTALES:                                                   #
+            #   1. Verifica que el archivo CSV de datos exista.                          #
+            #   2. Lee el archivo línea por línea y extrae:                              #
+            #      - Marca de tiempo (Timestamp)                                         #
+            #      - Conteo de personas (Personas)                                       #
+            #      - Conteo de vehículos (Autos)                                         #
+            #   3. Convierte las cadenas de texto a formatos adecuados                   #
+            #      (datetime para tiempos, int para conteos).                            #
+            #   4. Crea un gráfico de líneas con:                                        #
+            #      - Línea AZUL (continua) para vehículos                                #
+            #      - Línea VERDE (discontinua) para personas                             #
+            #   5. Configura etiquetas, título, leyenda y cuadrícula.                    #
+            #   6. Guarda el gráfico como imagen PNG en la carpeta 'data'.               #
+            #   7. Muestra el gráfico en pantalla.                                       #
+            #                                                                            #
+            # FLUJO: VERIFICAR ARCHIVO -> LEER CSV -> PROCESAR DATOS ->                  #
+            #        CREAR GRÁFICO -> GUARDAR Y MOSTRAR                                  #
+            ##############################################################################
