@@ -1,8 +1,14 @@
 import cv2
 import time
+import os
+import datetime
 from modules.config import ROJO, VERDE, VIDEO_PATH
 from modules.detectors import Detector
 from modules.data_manager import save_data
+
+VIOLATION_DIR = "infracciones"
+if not os.path.exists(VIOLATION_DIR):
+    os.makedirs(VIOLATION_DIR)
 
 def main():
     try:
@@ -25,6 +31,7 @@ def main():
     last_printed_state = ""
     last_people_count = 0
     last_car_count = 0
+    last_violation_time = 0
 
     while True:
         ret, frame = cap.read()
@@ -39,6 +46,15 @@ def main():
         if current_time - last_save_time >= 1.0:
             save_data(people_count, car_count)
             last_save_time = current_time
+
+        if traffic_light_state == ROJO and car_count > 0:
+            if current_time - last_violation_time >= 2.0:
+                print("Un automovil se ha cruzado en rojo")
+                timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
+                filename = os.path.join(VIOLATION_DIR, f"violation_{timestamp}.jpg")
+                cv2.imwrite(filename, frame)
+                print(f"Screenshot guardado en {filename}")
+                last_violation_time = current_time
 
         if traffic_light_state == ROJO:
             if current_time - last_person_check_time >= 30:
