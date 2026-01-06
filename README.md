@@ -12,10 +12,10 @@ Sistema de monitoreo y optimización de flujo vehicular y peatonal que utiliza i
     - [Objetivos del Proyecto](#objetivos-del-proyecto)
     - [Arquitectura del Sistema](#arquitectura-del-sistema)
     - [Fuentes de Datos](#fuentes-de-datos)
+    - [Imagnes de referencia](#imagenes-de-referencia)
     - [Decisiones de Diseño](#decisiones-de-diseño)
     - [Resultados y Conclusión](#resultados-y-conclusión)
 - [Stack Tecnológico](#stack-tecnológico)
-- [Reconocimientos](#reconocimientos)
 
 ---
 
@@ -117,6 +117,16 @@ timestamp,tipo_vehiculo,x,y,ancho,alto,confianza,frame,corredor_vial
 ```
 
 ---
+
+
+### Imagenes de referencia: 
+
+
+- _[Imagen de Referencia 1](/img/imagenDereferencia1.png)_
+- _[Imagen de Referencia 2](/img/ImagenDeReferenca2.jpg)_
+- _[Imagen de Referencia 3](/img/ImagenDeReferenca3.jpg)_
+  
+
 
 ## Decisiones de Diseño
 
